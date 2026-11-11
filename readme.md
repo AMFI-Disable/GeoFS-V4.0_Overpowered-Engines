@@ -11,13 +11,13 @@ Experimental V4 port of the GeoFS V3.9 Overpowered Engines userscript. Version 0
 
 ## Installation
 
-Install a userscript manager and install the script from its Greasy Fork page once published. The manager loads the V4 Core Library and Design System automatically. Open or reload GeoFS V4; this script does not run on V3.9.
+Install a userscript manager and install the script from [Greasy Fork](https://greasyfork.org/en/scripts/604894-geofs-v4-0-overpowered-engines). The manager loads the V4 Core Library and Design System automatically. Open or reload GeoFS V4; this script does not run on V3.9.
 
 ## Testing
 
 The port has automated checks with simulated aircraft data. Real aircraft behavior, high-altitude flight, stability augmentation, and Autothrottle coordination need verification in the GeoFS V4 beta.
 
-With Node.js and jsdom available, run `node tests/port.test.js` from this directory.
+With Node.js and jsdom available, run `node port.test.js` from this directory.
 
 ## Educational And Fair-Play Disclaimer
 
