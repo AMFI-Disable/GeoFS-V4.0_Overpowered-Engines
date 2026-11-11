@@ -1,0 +1,22 @@
+# Working And Preserved Files
+!*.user.js
+!manifest.json
+!readme*.md
+!changelog.md
+!security.md
+!license
+!tests/
+
+# Hidden And Ignored Artifacts
+.DS_Store
+._*
+.vscode/
+.idea/
+node_modules/
+dist/
+build/
+.env
+.env.*
+*.pem
+*.key
+*.log
