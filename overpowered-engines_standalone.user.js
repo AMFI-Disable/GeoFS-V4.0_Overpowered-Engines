@@ -109,6 +109,8 @@
 // @icon                https://www.geo-fs.com/images/icons/favicon.ico
 // @match               https://beta.geo-fs.com/geofs.php*
 // @match               https://www.geo-fs.com/geofs.php*
+// @require             https://update.greasyfork.org/scripts/604885/code.js
+// @require             https://update.greasyfork.org/scripts/604887/code.js
 // @grant               none
 // @license             MIT
 // @copyright           2026, AMFI-Disable (https://greasyfork.org/users/1594049)
@@ -722,7 +724,7 @@
     document.addEventListener("keydown", (e) => overpoweredEnginesSuite.handleKeyPress(e));
 
     if (window.V40_NOTIF) {
-        window.V40_NOTIF.success("GeoFS-V4.0_Overpowered-Engines v0.1.0 Loaded.");
+        window.V40_NOTIF.success("GeoFS-V4.0_Overpowered-Engines v0.2.0 Loaded.");
     }
 
     const checkInterval = setInterval(() => {

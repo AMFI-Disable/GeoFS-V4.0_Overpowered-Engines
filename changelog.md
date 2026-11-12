@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.2.0] - V4 Integration Update
+
+- Updates V4 integration and expands the port checks.
+- Live GeoFS V4 validation is pending.
+
 ## [0.1.0] - Experimental V4 Port
 
 ### Added

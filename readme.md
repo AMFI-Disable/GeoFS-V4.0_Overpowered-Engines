@@ -27,3 +27,7 @@ With Node.js and jsdom available, run `node port.test.js` from this directory.
 ## License
 
 [MIT](license) · © 2026 AMFI-Disable
+
+## Latest Experimental Update
+
+Updates V4 integration and expands the port checks. This version targets GeoFS V4; in-simulator validation is pending.
