@@ -1,24 +1,156 @@
 // ==UserScript==
-// @name         GeoFS-V4.0_Overpowered-Engines
-// @namespace    https://greasyfork.org/users/1594049
-// @version      0.1.0
-// @description  Experimental GeoFS V4 port of the V3.9 thrust, ceiling, and stability controls.
-// @author       AMFI-Disable
-// @icon         https://www.geo-fs.com/images/icons/favicon.ico
-// @match        https://beta.geo-fs.com/geofs.php*
-// @match        https://www.geo-fs.com/geofs.php*
-// @require      https://update.greasyfork.org/scripts/604885/code.js
-// @require      https://update.greasyfork.org/scripts/604887/code.js
-// @grant        none
-// @run-at       document-idle
-// @license      MIT
+// @name                GeoFS-V4.0_Overpowered-Engines
+// @name:vi             GeoFS-V4.0_Động-Cơ-Mạnh-Mẽ
+// @name:zh-CN          GeoFS-V4.0_动力过大的引擎
+// @name:zh-TW          GeoFS-V4.0_動力過大的引擎
+// @name:ja             GeoFS-V4.0_過大なエンジン
+// @name:ko             GeoFS-V4.0_압도적인-엔진
+// @name:fr             GeoFS-V4.0_Moteurs-Surpuissants
+// @name:de             GeoFS-V4.0_Übermächtige-Motoren
+// @name:es             GeoFS-V4.0_Motores-Dominados
+// @name:pt-BR          GeoFS-V4.0_Motores-Sobrecarregados
+// @name:pt-PT          GeoFS-V4.0_Motores-Sobrecarregados
+// @name:ru             GeoFS-V4.0_Мощные-Двигатели
+// @name:ar             GeoFS-V4.0_محركات-تغلبت
+// @name:tr             GeoFS-V4.0_Aşırı-Güçlü-Motorlar
+// @name:id             GeoFS-V4.0_Mesin-Yang-Dikuasai
+// @name:th             GeoFS-V4.0_เครื่องยนต์ที่เอาชนะได้
+// @name:pl             GeoFS-V4.0_Przeciążone-Silniki
+// @name:nl             GeoFS-V4.0_Overpowerde-Motoren
+// @name:it             GeoFS-V4.0_Motori-Sopraffatti
+// @name:sv             GeoFS-V4.0_Övermannade-Motorer
+// @name:da             GeoFS-V4.0_Overmandede-Motorer
+// @name:fi             GeoFS-V4.0_Ylivoimaiset-Moottorit
+// @name:nb             GeoFS-V4.0_Overdrevne-Motorer
+// @name:cs             GeoFS-V4.0_Přehnané-Motory
+// @name:hu             GeoFS-V4.0_Túlerős-Motorok
+// @name:ro             GeoFS-V4.0_Motoare-Suprapuse
+// @name:uk             GeoFS-V4.0_Надпотужні-Двигуни
+// @name:hi             GeoFS-V4.0_प्रबल-इंजन
+// @name:bn             GeoFS-V4.0_ওভারপাওয়ারড-ইঞ্জিন
+// @name:fa             GeoFS-V4.0_موتورهای-بیش-از-حد
+// @name:he             GeoFS-V4.0_מנועים-מוגזמים
+// @name:ms             GeoFS-V4.0_Enjin-Terlampau
+// @name:fil            GeoFS-V4.0_Mga-Malakas-Na-Makina
+// @name:el             GeoFS-V4.0_Υπερισχύοντες-Κινητήρες
+// @name:hr             GeoFS-V4.0_Nadjačani-Motori
+// @name:sk             GeoFS-V4.0_Prehnané-Motory
+// @name:bg             GeoFS-V4.0_Свръхмощни-Двигатели
+// @name:sr             GeoFS-V4.0_Оверповеред-Енгинес
+// @name:lt             GeoFS-V4.0_Pertekliniai-Varikliai
+// @name:lv             GeoFS-V4.0_Pārspīlēti-Dzinēji
+// @name:et             GeoFS-V4.0_Ülevõimsusega-Mootorid
+// @name:sl             GeoFS-V4.0_Premočni-Motorji
+// @name:ca             GeoFS-V4.0_Motors-Sobrealimentats
+// @name:af             GeoFS-V4.0_Oordrewe-Enjins
+// @name:sw             GeoFS-V4.0_Injini-Zinazozidiwa
+// @name:zu             GeoFS-V4.0_Izinjini-Ezinamandla
+// @name:mn             GeoFS-V4.0_Хэт-Хүчтэй-Хөдөлгүүрүүд
+// @name:my             GeoFS-V4.0_စွမ်းအားလွန်အင်ဂျင်များ
+// @name:km             GeoFS-V4.0_ម៉ាស៊ីនលើសចំណុះ
+// @name:lo             GeoFS-V4.0_ເຄື່ອງຈັກເກີນແຮງ
+// @name:ur             GeoFS-V4.0_زیادہ-طاقت-والے-انجن
+// @description         Bypass standard thrust limits with dynamic scaling and simulated afterburners. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:vi      Bỏ qua các giới hạn lực đẩy tiêu chuẩn với khả năng chia tỷ lệ động và bộ đốt sau mô phỏng. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:zh-CN   通过动态缩放和模拟加力燃烧室绕过标准推力限制。 © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:zh-TW   透過動態縮放和模擬加力燃燒室繞過標準推力限制。 © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:ja      動的スケーリングとシミュレートされたアフターバーナーを使用して、標準の推力制限をバイパスします。 © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:ko      동적 스케일링 및 시뮬레이션된 애프터버너를 통해 표준 추력 제한을 우회합니다. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:fr      Contournez les limites de poussée standard avec une mise à l'échelle dynamique et des postcombustion simulées. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:de      Umgehen Sie Standardschubgrenzen mit dynamischer Skalierung und simulierten Nachbrennern. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:es      Evite los límites de empuje estándar con escalado dinámico y postquemadores simulados. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:pt-BR   Ignore os limites de empuxo padrão com escalonamento dinâmico e pós-combustão simulados. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:pt-PT   Ignore os limites de impulso padrão com o escalonamento dinâmico e a pós-combustão simulados. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:ru      Обходите стандартные ограничения тяги с помощью динамического масштабирования и имитации форсажных камер. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:ar      تجاوز حدود الدفع القياسية باستخدام المقياس الديناميكي ومحاكاة الحارقات اللاحقة. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:tr      Dinamik ölçeklendirme ve simüle edilmiş art yakıcılar ile standart itme sınırlarını aşın. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:id      Lewati batas daya dorong standar dengan penskalaan dinamis dan simulasi afterburner. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:th      ข้ามขีดจำกัดแรงขับมาตรฐานด้วยไดนามิกสเกลและตัวเบิร์นเนอร์จำลอง © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:pl      Omiń standardowe ograniczenia ciągu dzięki dynamicznemu skalowaniu i symulowanym dopalaczom. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:nl      Omzeil standaard stuwkrachtlimieten met dynamische schaling en gesimuleerde naverbranders. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:it      Bypassa i limiti di spinta standard con ridimensionamento dinamico e postbruciatori simulati. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:sv      Förbigå standardtryckgränser med dynamisk skalning och simulerade efterbrännare. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:da      Omgå standard trykgrænser med dynamisk skalering og simulerede efterbrændere. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:fi      Ohita normaalit työntövoimarajat dynaamisella skaalaumalla ja simuloiduilla jälkipolttimilla. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:nb      Omgå standard skyvekraftgrenser med dynamisk skalering og simulerte etterbrennere. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:cs      Obejít standardní limity tahu pomocí dynamického škálování a simulovaných přídavných spalování. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:hu      Dinamikus skálázással és szimulált utóégetőkkel kerülje ki a szabványos tolóerő-határokat. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:ro      Ocoliți limitele standard de tracțiune cu scalare dinamică și postcombustie simulate. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:uk      Обхід стандартних обмежень тяги за допомогою динамічного масштабування та імітації форсажу. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:hi      डायनेमिक स्केलिंग और सिम्युलेटेड आफ्टरबर्नर के साथ मानक थ्रस्ट सीमा को बायपास करें। © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:bn      ডায়নামিক স্কেলিং এবং সিমুলেটেড আফটারবার্নারের সাথে স্ট্যান্ডার্ড থ্রাস্ট সীমা বাইপাস করুন। © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:fa      با مقیاس بندی پویا و پس سوز شبیه سازی شده، محدودیت های رانش استاندارد را دور بزنید. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:he      עוקף מגבלות דחף סטנדרטיות עם קנה מידה דינמי ומבערים מדומה. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:ms      Pintas had tujahan standard dengan penskalaan dinamik dan penunu selepas simulasi. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:fil     I-bypass ang mga karaniwang limitasyon ng thrust na may dynamic na pag-scale at mga simulate na afterburner. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:el      Παρακάμψτε τα τυπικά όρια ώσης με δυναμική κλιμάκωση και προσομοιωμένους μετακαυστήρες. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:hr      Zaobiđite standardna ograničenja potiska s dinamičkim skaliranjem i simuliranim naknadnim izgaranjem. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:sk      Obíďte štandardné limity ťahu pomocou dynamického škálovania a simulovaných prídavných spaľovaní. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:bg      Прескочете стандартните ограничения на тягата с динамично мащабиране и симулирани доизгаряния. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:sr      Заобиђите стандардне границе потиска са динамичким скалирањем и симулираним накнадним сагоревањем. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:lt      Apeikite standartines traukos ribas naudodami dinaminį mastelio keitimą ir imituojamus papildomus degiklius. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:lv      Apejiet standarta vilces ierobežojumus, izmantojot dinamisku mērogošanu un simulētus pēcdedzinātājus. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:et      Dünaamilise skaleerimise ja simuleeritud järelpõletitega saate standardsetest tõukejõupiirangutest mööda minna. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:sl      Presegajte standardne omejitve potiska z dinamičnim skaliranjem in simuliranim naknadnim zgorevanjem. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:ca      Evita els límits d'empenta estàndard amb escalat dinàmic i postcombustió simulats. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:af      Omseil standaard stootgrense met dinamiese skaal en gesimuleerde naverbranders. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:sw      Vikomo vya msukumo wa kawaida wa Bypass na kuongeza nguvu na vichochezi vilivyoiga. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:zu      Imikhawulo ye-Bypass ye-thrust enesilinganiso esiguqukayo kanye nama-afterburners alingisiwe. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:mn      Динамик масштаб болон дуурайлган шатаагчийн тусламжтайгаар стандарт ачааллын хязгаарыг алгасах. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:my      တက်ကြွသော အတိုင်းအတာနှင့် ပုံဖော်ထားသော afterburners များဖြင့် ပုံမှန်တွန်းအားကန့်သတ်ချက်များကို ကျော်ဖြတ်ပါ။ © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:km      រំលងដែនកំណត់ស្ដង់ដារនៃការរុញច្រានជាមួយនឹងការធ្វើមាត្រដ្ឋានថាមវន្ត និងក្លែងធ្វើម៉ាស៊ីនដុតក្រោយ។ © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:lo      ຂ້າມຂໍ້ຈຳກັດແຮງດັນມາດຕະຖານດ້ວຍການປັບຂະໜາດແບບໄດນາມິກ ແລະເຄື່ອງເຜົາຜານຫຼັງການຈຳລອງ. © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+// @description:ur      متحرک اسکیلنگ اور نقلی آفٹر برنرز کے ساتھ معیاری زور کی حدود کو نظرانداز کریں۔ © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
+
+// @namespace           https://greasyfork.org/users/1594049
+// @version             0.2.0
+// @author              AMFI-Disable
+// @homepageURL         https://sites.google.com/view/geofs-v40-ecosystem/home
+// @icon                https://www.geo-fs.com/images/icons/favicon.ico
+// @match               https://beta.geo-fs.com/geofs.php*
+// @match               https://www.geo-fs.com/geofs.php*
+// @grant               none
+// @license             MIT
+// @copyright           2026, AMFI-Disable (https://greasyfork.org/users/1594049)
+// @compatible          chrome
+// @compatible          firefox
+// @compatible          edge
+// @compatible          safari
+// @compatible          brave
+// @compatible          opera
 // ==/UserScript==
-(() => {
-    if (!window.GeoFSV4Core || !window.GeoFSV4Design) {
-        console.error('[GeoFS-V4.0_Overpowered-Engines] Missing dependency');
+
+// Wait for GeoFS to report its version before executing any module code.
+// Unknown, older, and newer versions never activate this V4.0 release.
+(function waitForGeoFSVersion() {
+    const version = window.geofs?.version;
+    if (version === undefined || version === null || version === '') {
+        setTimeout(waitForGeoFSVersion, 250);
         return;
     }
-    function main() {
+    if (!/^(?:v)?4(?:\.\d+)*$/i.test(String(version).trim())) {
+        console.warn('[GeoFS-V4.0_Overpowered-Engines] Inactive: GeoFS ' + version + ' is not V4.0.');
+        return;
+    }
+
+
+(() => {
+    /**
+     * Runtime Version Guard: GeoFS-V4.0 Suite Compatibility
+     * Allows this module to execute only when GeoFS reports version 4.0.
+     */
+    function isUnsupportedGeoFS() {
+        const raw = window.geofs?.version;
+        return !/^(?:v)?4(?:\.\d+)*$/i.test(String(raw ?? '').trim());
+    }
+
+    if (isUnsupportedGeoFS()) {
+        console.warn("[GeoFS-V4.0_Overpowered-Engines] Inactive: GeoFS v" + window.geofs?.version + " detected (suite only supports GeoFS v4.0).");
+        return;
+    }
+
+    console.log("[GeoFS-V4.0_Overpowered-Engines] >> Initializing SAS stability engine...");
+
     // Persistence Layer: Load state from localStorage with fallbacks
     window.opMultiplier = parseFloat(localStorage.getItem('geofs-op-mult')) || 1.0;
     window.opCeiling = parseInt(localStorage.getItem('geofs-op-ceiling')) || 3000000;
@@ -29,7 +161,7 @@
     
     // Physical Buffers: Cache original engine parameters for non-destructive restoration
     let t_cache = { thrust: {}, zeroThrustAltitude: null, zeroRPMAltitude: null, torque: {} };
-    let lastAircraft = geofs?.aircraft?.instance || null;
+    let lastAcId = geofs?.aircraft?.instance?.aircraftRecord?.id || null;
 
     const overpoweredEnginesSuite = {
         state: {
@@ -481,14 +613,14 @@
      * Modifies the maximum thrust, afterburner, and reverse thrust vectors for 
      * all engine parts in the current aircraft.
      */
-    function applyThrust(silent = false) {
+    function applyThrust() {
         if (geofs?.aircraft?.instance) {
             const ac = geofs.aircraft.instance;
             if (ac.parts) for (const u in ac.parts) {
                 const s = ac.parts[u];
                 if (s?.thrust !== undefined) {
                     // Logic: Cache original values on first activation to allow clean reversal.
-                    if (!t_cache.thrust[u]) t_cache.thrust[u] = { thrust: s.thrust, afterBurnerThrust: s.afterBurnerThrust ?? null, reverseThrust: s.reverseThrust ?? null };
+                    if (!t_cache.thrust[u]) t_cache.thrust[u] = { thrust: s.thrust, afterBurnerThrust: s.afterBurnerThrust || null, reverseThrust: s.reverseThrust || null };
                     const mult = window.opMultiplier || 1;
                     s.thrust = mult * Number(t_cache.thrust[u].thrust);
                     if (s.afterBurnerThrust !== undefined) s.afterBurnerThrust = (t_cache.thrust[u].afterBurnerThrust !== null) ? mult * t_cache.thrust[u].afterBurnerThrust : s.thrust;
@@ -498,7 +630,7 @@
             if (globalThis.isSASActive) applyTorqueSuppression();
         }
         globalThis.isThrustActive = true;
-        if (!silent && window.V40_NOTIF) window.V40_NOTIF.success(`Thrust Active: ${window.opMultiplier}x Multiplier`);
+        if (window.V40_NOTIF) window.V40_NOTIF.success(`Thrust Active: ${window.opMultiplier}x Multiplier`);
         overpoweredEnginesSuite.updatePhysicsUI();
     }
 
@@ -594,30 +726,28 @@
     }
 
     const checkInterval = setInterval(() => {
-        if (window.GeoFSV4Core.state !== "ready") {
+        if (isUnsupportedGeoFS()) {
             clearInterval(checkInterval);
             return;
         }
-        const aircraft = geofs?.aircraft?.instance || null;
-        if (aircraft !== lastAircraft) {
+        const e = geofs?.aircraft?.instance?.aircraftRecord?.id || null;
+        if (e !== lastAcId) {
             t_cache = { thrust: {}, zeroThrustAltitude: null, zeroRPMAltitude: null, torque: {} };
             globalThis.isThrustActive = false; globalThis.isCeilingActive = false;
-            lastAircraft = aircraft;
-            if (globalThis.isSASActive) applyTorqueSuppression();
-            overpoweredEnginesSuite.updatePhysicsUI();
+            lastAcId = e; overpoweredEnginesSuite.updatePhysicsUI();
         }
     }, 1000);
 
     // SAS Ticker loop (50Hz)
     const sasInterval = setInterval(() => {
-        if (window.GeoFSV4Core.state !== "ready") {
+        if (isUnsupportedGeoFS()) {
             clearInterval(sasInterval);
             return;
         }
         overpoweredEnginesSuite.tickSAS();
     }, 20);
 
-    if (window.GeoFSV4Core.state !== "ready") return;
+    if (isUnsupportedGeoFS()) return;
 
     const autopilotBar = document.getElementsByClassName("geofs-autopilot-bar")[0];
     if (autopilotBar && !document.getElementById("opModBtn")) {
@@ -636,6 +766,6 @@
         bar.appendChild(btn);
         autopilotBar.appendChild(bar);
     }
-    }
-    window.GeoFSV4Core.initialize('Overpowered-Engines', main).catch(() => {});
+})();
+
 })();
