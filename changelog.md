@@ -1,5 +1,9 @@
 # Changelog
 
+All notable changes, features, and architectural capabilities of this project are documented in this file.
+
+---
+
 ## [0.2.0] - V4 Integration Update
 
 - Updates V4 integration and expands the port checks.
