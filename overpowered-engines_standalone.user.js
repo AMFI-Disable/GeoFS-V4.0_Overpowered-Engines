@@ -103,7 +103,7 @@
 // @description:ur      متحرک اسکیلنگ اور نقلی آفٹر برنرز کے ساتھ معیاری زور کی حدود کو نظرانداز کریں۔ © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
 
 // @namespace           https://greasyfork.org/users/1594049
-// @version             1.0.0
+// @version             1.0.1
 // @author              AMFI-Disable
 // @homepageURL         https://sites.google.com/view/geofs-v40-ecosystem/home
 // @icon                https://www.geo-fs.com/images/icons/favicon.ico
@@ -725,7 +725,7 @@
     document.addEventListener("keydown", (e) => overpoweredEnginesSuite.handleKeyPress(e));
 
     if (window.V40_NOTIF) {
-        window.V40_NOTIF.success("GeoFS-V4.0_Overpowered-Engines v1.0.0 Loaded.");
+        window.V40_NOTIF.success("GeoFS-V4.0_Overpowered-Engines v1.0.1 Loaded.");
     }
 
     const checkInterval = setInterval(() => {
@@ -761,9 +761,10 @@
         const btn = document.createElement("div"); 
         btn.id = "opModBtn"; 
         btn.className = "control-pad";
-        btn.style.cssText = "width: 90px; height: 25px; margin: 0px 10px; border-radius: 15px; cursor: pointer !important; border: 1px solid #888; background-color: #000; box-shadow: 0px 0px 5px #000;";
+        btn.title = "Overpowered Engines";
+        btn.style.cssText = "width: 65px; height: 25px; margin: 0px 10px; border-radius: 15px; cursor: pointer !important; border: 1px solid #888; background-color: #000; box-shadow: 0px 0px 5px #000;";
         
-        btn.innerHTML = '<div class="control-pad-label transp-pad" style="pointer-events: none; text-align: center; line-height: 25px;">OP ENGINES</div>';
+        btn.innerHTML = '<div class="control-pad-label transp-pad" style="pointer-events: none; text-align: center; line-height: 25px;">OP ENG</div>';
         btn.onclick = () => window.toggleOpEngineUI(); 
         
         bar.appendChild(btn);
