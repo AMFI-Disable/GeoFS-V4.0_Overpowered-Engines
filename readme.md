@@ -1,33 +1,30 @@
 # GeoFS-V4.0_Overpowered-Engines
 
-Experimental V4 port of the GeoFS V3.9 Overpowered Engines userscript. Version 0.1.0 is unstable and its physics integration still needs testing in the GeoFS V4 beta.
+![Version](https://img.shields.io/badge/Version-v1.0.0-3b82f6?style=flat-square)
+
+Adds adjustable thrust, altitude ceiling, and stability controls.
 
 ## Features
 
-- Open the original controls using **OP ENGINES** on the GeoFS autopilot bar.
-- Adjust the thrust multiplier and altitude ceiling, toggle stability augmentation, and configure the thrust hotkey.
-- Coordinate thrust and ceiling controls with the V4 Autothrottle when it is installed.
-- Restore saved engine values when controls are switched off.
+- Open the controls with **OP ENGINES** on the GeoFS autopilot bar.
+- Adjust thrust and ceiling settings, use stability augmentation, and configure a hotkey.
+- The panel can coordinate with Autothrottle when both scripts are running.
 
 ## Installation
 
-Install a userscript manager and install the script from [Greasy Fork](https://greasyfork.org/en/scripts/604894-geofs-v4-0-overpowered-engines). The manager loads the V4 Core Library and Design System automatically. Open or reload GeoFS V4; this script does not run on V3.9.
+1. Install a userscript manager such as [Tampermonkey](https://www.tampermonkey.net/).
+2. Install or update the script from [Greasy Fork](https://greasyfork.org/en/scripts/604894).
+3. Open or reload GeoFS V4.0. The script starts automatically.
 
-## Testing
+The script activates only when GeoFS reports version V3.9 (including V3.9 patch releases). It waits for the version to become available and remains inactive on other versions. This script loads the Core Library and Design System as dependencies; the userscript manager handles those dependencies.
 
-The port has automated checks with simulated aircraft data. Real aircraft behavior, high-altitude flight, stability augmentation, and Autothrottle coordination need verification in the GeoFS V4 beta.
+The **GeoFS-V4.0_Ecosystem** panel shows startup status and notifications. Select × to dismiss it, or wait for it to disappear. A script listed as not detected is not necessarily uninstalled.
 
-With Node.js and jsdom available, run `node port.test.js` from this directory.
+## License
+
+[MIT](license) · © 2026 AMFI-Disable · [GeoFS-V4.0 Ecosystem](https://sites.google.com/view/geofs-v40-ecosystem/home)
 
 ## Educational And Fair-Play Disclaimer
 
 > [!CAUTION]
-> This code is provided for educational, research, and testing purposes in authorized environments. Automated assistance or scripts that violate platform terms may lead to account penalties. The developers and contributors accept no responsibility for misuse.
-
-## License
-
-[MIT](license) · © 2026 AMFI-Disable
-
-## Latest Experimental Update
-
-Updates V4 integration and expands the port checks. This version targets GeoFS V4; in-simulator validation is pending.
+> This script is provided for educational, research, and testing use in authorized environments. Follow GeoFS rules and applicable platform terms.

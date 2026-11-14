@@ -103,7 +103,7 @@
 // @description:ur      متحرک اسکیلنگ اور نقلی آفٹر برنرز کے ساتھ معیاری زور کی حدود کو نظرانداز کریں۔ © 2026 AMFI-Disable. Part of the GeoFS-V4.0_Ecosystem.
 
 // @namespace           https://greasyfork.org/users/1594049
-// @version             0.2.0
+// @version             1.0.0
 // @author              AMFI-Disable
 // @homepageURL         https://sites.google.com/view/geofs-v40-ecosystem/home
 // @icon                https://www.geo-fs.com/images/icons/favicon.ico
@@ -120,6 +120,7 @@
 // @compatible          safari
 // @compatible          brave
 // @compatible          opera
+// @run-at              document-idle
 // ==/UserScript==
 
 // Wait for GeoFS to report its version before executing any module code.
@@ -724,7 +725,7 @@
     document.addEventListener("keydown", (e) => overpoweredEnginesSuite.handleKeyPress(e));
 
     if (window.V40_NOTIF) {
-        window.V40_NOTIF.success("GeoFS-V4.0_Overpowered-Engines v0.2.0 Loaded.");
+        window.V40_NOTIF.success("GeoFS-V4.0_Overpowered-Engines v1.0.0 Loaded.");
     }
 
     const checkInterval = setInterval(() => {
